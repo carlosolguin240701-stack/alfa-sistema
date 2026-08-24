@@ -1,0 +1,443 @@
+/* =========================================================
+   SIDEBAR - SISTEMA PREVERIFICADORA ALFA
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 300px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #24262d 0%,
+      #1b1d23 100%
+    );
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    10px 0 30px rgba(0, 0, 0, 0.18);
+
+  z-index: 1000;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO / MARCA
+   ========================================================= */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 5px 5px 24px 5px;
+
+  margin-bottom: 15px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.sidebar-logo {
+  width: 58px;
+  height: 58px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.sidebar-logo:hover {
+  transform: scale(1.06);
+
+  box-shadow:
+    0 8px 25px rgba(0, 229, 255, 0.2);
+}
+
+
+.sidebar-brand-text {
+  min-width: 0;
+}
+
+
+.sidebar-brand-text h2 {
+  margin: 0;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: #00e5ff;
+}
+
+
+.sidebar-brand-text span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 11px;
+  line-height: 1.35;
+
+  color: #8d9aaa;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  flex: 1;
+}
+
+
+.menu-title {
+  margin:
+    5px 10px 12px 10px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #687384;
+}
+
+
+/* =========================================================
+   BOTONES DEL MENÚ
+   ========================================================= */
+
+.sidebar-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #a5adba;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.sidebar-item:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  transform:
+    translateX(4px);
+}
+
+
+.sidebar-item.active {
+  color: #00e5ff;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 229, 255, 0.16),
+      rgba(0, 229, 255, 0.04)
+    );
+
+  box-shadow:
+    inset 3px 0 0 #00e5ff,
+    0 5px 18px rgba(0, 229, 255, 0.07);
+}
+
+
+.sidebar-item.active:hover {
+  transform: none;
+}
+
+
+/* =========================================================
+   ICONOS
+   ========================================================= */
+
+.sidebar-icon {
+  width: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   ESTADO DEL SISTEMA
+   ========================================================= */
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-top: 20px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.055);
+}
+
+
+.system-dot {
+  width: 10px;
+  height: 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #35df83;
+
+  box-shadow:
+    0 0 10px rgba(53, 223, 131, 0.65);
+}
+
+
+.sidebar-footer strong {
+  display: block;
+
+  color: #dce5ed;
+
+  font-size: 12px;
+}
+
+
+.sidebar-footer span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #657385;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   SCROLL DEL SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.sidebar::-webkit-scrollbar-thumb {
+  background:
+    rgba(0, 229, 255, 0.2);
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .sidebar {
+    width: 230px;
+
+    padding:
+      22px 14px;
+  }
+
+  .sidebar-brand-text h2 {
+    font-size: 20px;
+  }
+
+  .sidebar-item {
+    padding:
+      13px 12px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    width: 82px;
+
+    padding:
+      18px 10px;
+
+    align-items: center;
+  }
+
+
+  .sidebar-brand {
+    width: 100%;
+
+    justify-content: center;
+
+    padding-bottom: 20px;
+  }
+
+
+  .sidebar-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .sidebar-brand-text {
+    display: none;
+  }
+
+
+  .menu-title {
+    display: none;
+  }
+
+
+  .sidebar-nav {
+    width: 100%;
+
+    align-items: center;
+
+    gap: 8px;
+  }
+
+
+  .sidebar-item {
+    width: 55px;
+    height: 50px;
+
+    padding: 0;
+
+    justify-content: center;
+
+    border-radius: 12px;
+  }
+
+
+  .sidebar-item > span:not(.sidebar-icon) {
+    display: none;
+  }
+
+
+  .sidebar-icon {
+    width: auto;
+
+    font-size: 19px;
+  }
+
+
+  .sidebar-item:hover {
+    transform: none;
+  }
+
+
+  .sidebar-item.active {
+    box-shadow:
+      inset 3px 0 0 #00e5ff,
+      0 5px 15px rgba(0, 229, 255, 0.1);
+  }
+
+
+  .sidebar-footer {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+
+  .sidebar-footer div:not(.system-dot) {
+    display: none;
+  }
+
+}

@@ -1,0 +1,330 @@
+.calendar-section {
+  margin-top: 30px;
+  padding: 28px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.calendar-header h2 {
+  color: #00e5ff;
+  margin-bottom: 6px;
+}
+
+.calendar-header p {
+  color: #aebfd2;
+}
+
+.calendar-refresh {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-weight: 600;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1976d2,
+      #00b8d4
+    );
+
+  cursor: pointer;
+}
+
+.appointment-form {
+  padding: 24px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  margin-bottom: 25px;
+}
+
+.appointment-form h3 {
+  color: #00e5ff;
+
+  margin-bottom: 20px;
+}
+
+.appointment-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.appointment-grid input,
+.appointment-grid select,
+.appointment-grid textarea {
+  width: 100%;
+
+  padding: 13px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  background: #3b3e44;
+
+  color: white;
+
+  outline: none;
+}
+
+.appointment-grid textarea {
+  resize: vertical;
+
+  min-height: 48px;
+}
+
+.appointment-grid input:focus,
+.appointment-grid select:focus,
+.appointment-grid textarea:focus {
+  border-color: #00e5ff;
+}
+
+.appointment-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.appointment-save,
+.appointment-cancel {
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.appointment-save {
+  background:
+    linear-gradient(
+      135deg,
+      #1976d2,
+      #00b8d4
+    );
+}
+
+.appointment-cancel {
+  background: #596574;
+}
+
+.calendar-success {
+  padding: 15px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  border: 1px solid #28a745;
+
+  background:
+    rgba(40, 167, 69, 0.12);
+}
+
+.calendar-error {
+  padding: 15px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  border: 1px solid #dc3545;
+
+  background:
+    rgba(220, 53, 69, 0.12);
+}
+
+.calendar-loading,
+.calendar-empty {
+  padding: 30px;
+
+  text-align: center;
+
+  color: #9fb0c3;
+}
+
+.calendar-table-container {
+  overflow-x: auto;
+}
+
+.calendar-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+}
+
+.calendar-table thead {
+  background:
+    rgba(0, 229, 255, 0.13);
+}
+
+.calendar-table th {
+  padding: 15px;
+
+  color: #00e5ff;
+
+  text-align: left;
+}
+
+.calendar-table td {
+  padding: 15px;
+
+  color: #d8e0e9;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.calendar-actions {
+  display: flex;
+
+  gap: 8px;
+}
+
+.calendar-edit,
+.calendar-delete {
+  border: none;
+
+  border-radius: 9px;
+
+  padding: 8px 12px;
+
+  cursor: pointer;
+}
+
+.calendar-edit {
+  background: #ffc107;
+}
+
+.calendar-delete {
+  background: #dc3545;
+}
+
+.status-cita {
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.status-pendiente {
+  background:
+    rgba(255, 193, 7, 0.15);
+
+  color: #ffd65a;
+}
+
+.status-confirmada {
+  background:
+    rgba(0, 229, 255, 0.13);
+
+  color: #00e5ff;
+}
+
+.status-cancelada {
+  background:
+    rgba(220, 53, 69, 0.14);
+
+  color: #ff7e8b;
+}
+
+.status-finalizada {
+  background:
+    rgba(40, 167, 69, 0.14);
+
+  color: #70e58d;
+}
+
+@media (max-width: 1000px) {
+  .appointment-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appointment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-refresh {
+    width: 100%;
+  }
+}
+.appointment-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.appointment-status.pendiente {
+  color: #ffd45d;
+  background: rgba(255, 193, 7, 0.12);
+}
+
+.appointment-status.confirmada {
+  color: #5dd9ff;
+  background: rgba(0, 183, 255, 0.12);
+}
+
+.appointment-status.finalizada {
+  color: #78e596;
+  background: rgba(40, 167, 69, 0.12);
+}
+
+.appointment-status.cancelada {
+  color: #ff7e8c;
+  background: rgba(220, 53, 69, 0.12);
+}
